@@ -1,0 +1,14 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# Local Settings
+.env
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz

@@ -1,0 +1,36 @@
+[project]
+name = "ai-common"
+version = "0.1.0"
+description = "Shared utilities for the masters_in_ai workspace (paths, file operations, etc.)."
+readme = "../README.md"
+authors = [
+    { name = "Nico", email = "" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.9.11,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18.2",
+    "pytest>=9.0.1",
+    "ruff>=0.14.6",
+    "taskipy>=1.14.1",
+]
+
+[tool.taskipy.tasks]
+# Checks
+lint = "uv run ruff check src"
+format = "uv run ruff format src"
+typecheck = "uv run mypy src"
+
+# Tests
+test = "uv run pytest"
+
+# Combined quick check
+check = "task lint && task format && task typecheck && task test"
+
+
