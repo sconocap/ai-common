@@ -1,8 +1,8 @@
 [project]
 name = "ai-common"
-version = "0.1.0"
+version = "0.1.2"
 description = "Shared utilities for the masters_in_ai workspace (paths, file operations, etc.)."
-readme = "../README.md"
+readme = "README.md"
 authors = [
     { name = "Nico", email = "" }
 ]
