@@ -1,6 +1,6 @@
 import os
 
-from ai_common.file_operations.paths import (
+from ..file_operations.paths import (
     get_absolute_path,
     get_package_path,
     get_project_path,
@@ -22,9 +22,9 @@ def test_get_absolute_path():
 
 def test_get_project_path():
     # get_project_path should find project root (where pyproject.toml is) and build paths relative to it
-    # The project root is ai-common/ (parent of test/ directory)
+    # The project root is ai-common/ (4 levels up from test file)
     project_root = os.path.dirname(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     )
 
     # Test finding pyproject.toml
